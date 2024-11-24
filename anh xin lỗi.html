@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xin lỗi</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #message {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .option {
+            font-size: 20px;
+            margin: 10px;
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #e0e0e0;
+        }
+        #response {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="message">Cho anh xin lỗi nhé</div>
+    <div class="option" id="yes">Có</div>
+    <div class="option" id="no">Không</div>
+    <div id="response">Thương em</div>
+
+    <script>
+        const noOption = document.getElementById('no');
+        const yesOption = document.getElementById('yes');
+        const response = document.getElementById('response');
+
+        noOption.addEventListener('click', () => {
+            const randomX = Math.random() * (window.innerWidth - 100);
+            const randomY = Math.random() * (window.innerHeight - 100);
+            noOption.style.position = 'absolute';
+            noOption.style.left = randomX + 'px';
+            noOption.style.top = randomY + 'px';
+        });
+
+        yesOption.addEventListener('click', () => {
+            response.style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
